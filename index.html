@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAHUANA STORE BETA</title>
+</head>
+<body>
+    <h1 class="inicio">Bienvenido a CAHUANA.STORE. Tu mejor aliado para el entretenimiento</h1>
+    <h2 class="sub1">📺Cuentas premium y pantallas📺</h2>
+    <h3 class="sub2">- ingresa el nombre del servicio de streaming o pantalla que deseas adquirir👇</h3>
+
+    <input type="text" id="opccionusuario" placeholder="Escribe el nombre">
+
+<body>
+    <div class="contenido netflix">   
+        <h3>Cuentas de NETFLIX. Garantía 100%</h3>
+        <img src="img/netflix largo.png" class="netpng">
+        <h4 class="escriwapp">escribenos por WhatsApp para que adquieras la tuya👇</h4>
+    </div>
+    <div class="contenido amazon">
+        <h3>Cuentas de AMAZON PRIME. Garantía 100%</h3>
+        <img src="img/prime-videofondoblack.png" class="amapng">
+        <h4 class="escriwapp">escribenos por WhatsApp para que adquieras la tuya👇</h4>
+    </div>
+    <div class="contenido hbo">
+        <h3>Cuentas de HBO MAX. Garantía 100%</h3>
+        <img src="img/HBO-Max-negro.webp" class="hbopng">
+        <h4 class="escriwapp">escribenos por WhatsApp para que adquieras la tuya👇</h4>
+    </div>
+    <div class="contenido spo">
+        <h3>Cuentas de SPOTIFY. Garantía 100%</h3>
+        <img src="img/spotifyhd.png" class="spopng">
+        <h4 class="escriwapp">escribenos por WhatsApp para que adquieras la tuya👇</h4>
+    </div>
+    <div class="contenido disney">
+        <h3>Cuentas de DISNEY +. Garantía 100%</h3>
+        <img src="img/disneyultra.png" class="dispng">
+        <h4 class="escriwapp">escribenos por WhatsApp para que adquieras la tuya👇</h4>
+    </div>
+    <div class="contenido info">
+        <p>No encontramos coincidencias en tu busqueda. Prueba ingresando un nombre de streaming como "netflix" ó "amazon", etc...</p>
+    </div>
+    <button id="botonWhatsApp" onclick="redirigirAWhatsApp()">contáctame por WhatsApp<img src="img/wapp withe.jpg" class="wapp">
+    </button>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <div class="redes">
+        <h4>- nuestras redes sociales, dale click a los enlaces para llevarte a ellas👇</h4>
+        <h3><a href="https://instagram.com/cahuana__/">Instagram</a><img src="img/pngtree-instagram-social-platform-icon-png-image_6315976.png" class="ing"></h3>
+
+        <h3><a href="https://linkedin.com/in/angel-cahuana-17608b246/">Linkedin</a><img src="img/logo-linkedin_578229-227.avif" class="ing"></h3>
+    </div>
+
+        <script>
+
+            const inputOpccion = document.getElementById('opccionusuario');
+            inputOpccion.addEventListener('input', function(){
+                const opcion = inputOpccion.value.toLowerCase();
+                
+                const divs = document.querySelectorAll('.contenido');
+                divs.forEach(div => div.style.display = 'none');
+            
+            if (opcion === "netflix" || opcion === "n" || opcion === "ne" ||opcion === "net" || opcion === "netl" || opcion === "netli"){
+                document.querySelector('.netflix').style.display = 'block';
+            } 
+            else if (opcion === "amazon" || opcion === "a" || opcion === "am" ||opcion === "ama" || opcion === "amaz" || opcion === "amazo"){
+                document.querySelector('.amazon').style.display = 'block';
+            } 
+            else if (opcion === "hbo" || opcion === "h" || opcion === "hb"){
+                document.querySelector('.hbo').style.display = 'block';
+            }
+            else if (opcion === "spotify" || opcion === "s" || opcion === "sp" ||opcion === "spo" || opcion === "spot" || opcion === "spoti" || opcion === "spotif"){
+                document.querySelector('.spo').style.display = 'block';
+            } 
+            else if (opcion === "disney" || opcion === "d" || opcion === "di" ||opcion === "dis" || opcion === "disn" || opcion === "disney"){
+                document.querySelector('.disney').style.display = 'block';
+            }
+            else {
+                document.querySelector('.info').style.display = 'block';
+            }
+            });
+
+            function redirigirAWhatsApp (){
+                //redirige a wapp con esta funcion, (la funcion ya fue creada arriba, en el boton de wapp)
+                const servicioSeleccionado = inputOpccion.value.toLowerCase();
+                const mensaje = `Hola, estoy interesado en el servicio de ${servicioSeleccionado}. ¿Me puedes brindar más información?`;
+
+                const urlWhatsApp = `https://wa.me/573042453303?text=${encodeURIComponent(mensaje)}`;
+                window.open(urlWhatsApp);
+            }
+            
+        </script>
+        <p>Gracias por tu visita
+        Software developer by: Italo Cahuana.👨‍💻 All rights reserved © 2025</p>
+</body>
+</html>
